@@ -3,6 +3,8 @@ class Product < ActiveRecord::Base
   belongs_to :category
   has_many :taggings
   has_many :tags, through: :taggings
+  has_many :age_groupings
+  has_many :age_groups, through: :age_groupings
 
   attr_writer :released_at_text, :tag_names
   attr_accessor :new_category
