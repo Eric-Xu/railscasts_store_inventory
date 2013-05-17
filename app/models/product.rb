@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  attr_accessible :name, :price_in_cents, :price_in_dollars, :released_at, :released_at_text, :category_id, :new_category, :tag_names
+  attr_accessible :name, :price_in_cents, :price_in_dollars, :released_at, :released_at_text, :category_id, :new_category, :tag_names, :age_group_ids
   belongs_to :category
   has_many :taggings
   has_many :tags, through: :taggings

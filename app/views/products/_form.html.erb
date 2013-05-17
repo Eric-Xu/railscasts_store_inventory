@@ -32,6 +32,15 @@
     <%= f.label :tag_names, "Tags (space separated)" %><br>
     <%= f.text_field :tag_names %>
   </div>
+  <div class="field">
+    Appropriate for ages:
+    <% AgeGroup.all.each do |group| %>
+      <br>
+      <%= check_box_tag "product[age_group_ids][]", group.id, @product.age_group_ids.include?(group.id), id: dom_id(group) %>
+      <%= label_tag dom_id(group), group.description %>
+      <%= hidden_field_tag "product[age_group_ids][]", nil %>
+    <% end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
