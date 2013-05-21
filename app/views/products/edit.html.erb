@@ -1,5 +1,5 @@
-<% content_for :title do %>Edit Product<% end %>
+<% title "Edit Product" %>
 
-<h1>Edit Product</h1>
+<h1><%= yield :title %></h1>
 
 <%= render 'form' %>
